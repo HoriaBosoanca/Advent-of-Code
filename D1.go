@@ -10,6 +10,9 @@ import (
 )
 
 func main() {
+
+	// PART 1
+
 	file, err := os.Open("input.txt")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
@@ -60,4 +63,18 @@ func main() {
 	}
 
 	fmt.Println(sum)
+
+	// PART 2
+
+	score := 0
+	for _, target := range(leftList) {
+		counter := 0
+		for _, v := range(rightList) {
+			if target == v {
+				counter++
+			}
+		}
+		score += target * counter
+	}
+	fmt.Println(score)
 }
